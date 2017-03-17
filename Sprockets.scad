@@ -38,7 +38,7 @@ sprocket(06B, 8, 0.2 , 0.5, 0.5);
 // These seem to be OK on my Replicator 1
 FUDGE_BORE=0;	 // mm to fudge the edges of the bore
 FUDGE_ROLLER=0; // mm to fudge the hole for the rollers
-FUDGE_TEETH=3;  // Additional rounding of the teeth (0 is theoretical,
+FUDGE_TEETH=2;  // Additional rounding of the teeth (0 is theoretical,
                 // my rep 1 seems to need 1 on medium.)
 
 function inches2mm(inches) = inches * 25.4;
@@ -223,26 +223,26 @@ function get_roller_diameter(size) =
 // time I realized that I already had the table...
 function get_thickness(size) =
 	// ANSI
-	size == 25 ? .110 :
-	size == 35 ? .168 :
-	size == 40 ? .284 :
-	size == 41 ? .227 :
-	size == 50 ? .343 :
-	size == 60 ? .459 :
-	size == 80 ? .575 :
+	size == 25 ? .109 :
+	size == 35 ? .167 :
+	size == 40 ? .283 :
+	size == 41 ? .226 :
+	size == 50 ? .342 :
+	size == 60 ? .458 :
+	size == 80 ? .574 :
     // ANSI BRITISH STANDARD METRIC
-    size == 06B ? .225 :
+    size == 06B ? .224 :
 	// Bike
-	size == 1 ? .110 :
-	size == 2 ? .084 :
+	size == 1 ? .109 :
+	size == 2 ? .083 :
 	// Motorcycle
-	size == 420 ? .227 :
-	size == 425 ? .284 :
-	size == 428 ? .284 :
-	size == 520 ? .227 :
-	size == 525 ? .284 :
-	size == 530 ? .343 :
-	size == 630 ? .343 :
+	size == 420 ? .226 :
+	size == 425 ? .283 :
+	size == 428 ? .283 :
+	size == 520 ? .226 :
+	size == 525 ? .283 :
+	size == 530 ? .342 :
+	size == 630 ? .342 :
 	// unknown
 	0;
 
