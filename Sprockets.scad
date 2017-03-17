@@ -8,9 +8,10 @@
 // 
 // http://www.gizmology.net/sprockets.htm has some geometry on sprockets.
 //
-// I built this for use with #25 roller chain, so any other sizes may need
-// tweaking.  You also may need to adjust stuff for your printer or
-// whatever, I used an original Replicator clone.
+// Shawn's tables were correct, too correct. I've given 1 thounsandths of an inch or 0.0254mm of tolerance to the sprocket width (thickness) table and the sprockets are now being output with enough play that little or no filing is necessary for the chain to run correctly. They were too tight. - Pierre
+//
+// Modified by Pierre Auge - 17 March 2017
+// 
 //
 // Usage:
 //
@@ -24,21 +25,19 @@
 //   hub_diameter:  Hub diameter, inches, default 0
 //   hub_height:    Hub height TOTAL, default 0.
 //
-// You may also need to tweak some of the fudge factors, depending on your
-// printer, etc.  See the constants below.
-//
-// Example:
-//
+// You may also need to tweak some of the fudge factors, depending on your printer, etc.  See the constants below.
+
 // use <sprockets.scad>
 $fn = 180;
 
 sprocket(06B, 8, 0.2 , 0.5, 0.5);
+// sprocket(size, teeth, bore, hub_diameter, hub_height);
 
-// Adjust these if it's too tight/loose on your printer,
-// These seem to be OK on my Replicator 1
+// Adjust these if it's too tight/loose on your printer
+// With the adjustment to the thickness table this seems to work on all of my various printers. I generally fudge the teeth by 1 to 3. - Pierre
 FUDGE_BORE=0;	 // mm to fudge the edges of the bore
 FUDGE_ROLLER=0; // mm to fudge the hole for the rollers
-FUDGE_TEETH=2;  // Additional rounding of the teeth (0 is theoretical,
+FUDGE_TEETH=0;  // Additional rounding of the teeth (0 is theoretical,
                 // my rep 1 seems to need 1 on medium.)
 
 function inches2mm(inches) = inches * 25.4;
